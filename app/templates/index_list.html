@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assets</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Assets</h1>
+            <a href="/assets/add" class="add-button">Add New Asset</a>
+            <table id="assetsTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Value</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for asset in assets %}
+                    <tr class="index-row">
+                        <td>{{ asset.id }}</td>
+                        <td>{{ asset.name }}</td>
+                        <td>{{ asset.current_price }}</td>
+                        <td>{{ asset.type }}</td>
+                        <td>
+                            <a href="/assets/edit/{{ asset.id }}">Edit</a> |
+                            <a href="/assets/delete/{{ asset.id }}">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button id="showMoreBtn">Show More</button>
+            <button id="showLessBtn" style="display: none;">Show Less</button>
+        </div>
+
+        <script>
+            const rows = document.querySelectorAll('.asset-row');
+            let visibleCount = 20;
+        
+            function updateVisibility() {
+                rows.forEach((row, idx) => {
+                    row.style.display = idx < visibleCount ? '' : 'none';
+                });
+                document.getElementById('showMoreBtn').style.display = visibleCount < rows.length ? '' : 'none';
+                document.getElementById('showLessBtn').style.display = visibleCount > 20 ? '' : 'none';
+            }
+
+            document.getElementById('showMoreBtn').addEventListener('click', () => {
+                visibleCount += 10;
+                updateVisibility();
+            });
+
+            document.getElementById('showLessBtn').addEventListener('click', () => {
+                visibleCount = 20;
+                updateVisibility();
+            });
+
+            updateVisibility();
+        </script>
+
+    </body>
+</html>

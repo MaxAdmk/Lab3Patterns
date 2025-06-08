@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #faedbf;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+form, table {
+  margin: 20px 0;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fefefe;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+button {
+  margin: 12px 0;
+  padding: 12px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0d81bf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1000px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  padding: 14px;
+  font-size: 18px;
+  text-align: center;
+}
+
+table th {
+  background-color: #defbf1;
+}
+
+a {
+  color: #0aa421;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.add-button, .back-link {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 12px 20px;
+  background-color: #079992;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover, .back-link:hover {
+  background-color: #1976D2;
+}
+
+#showMoreBtn, #showLessBtn {
+  margin: 20px;
+}

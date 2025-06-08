@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ action }} Asset</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>{{ action }} Asset</h1>
+    <form method="post" class="form">
+        <label>Name:</label>
+        <input type="text" name="name" value="{{ asset.name or '' }}" required>
+
+        <label>Value:</label>
+        <input type="number" step="any" name="value" value="{{ asset.value or '' }}" required>
+
+        <label>Type:</label>
+        <input type="text" step="any" name="type" value="{{ asset.type or '' }}" required>
+
+        <button type="submit">{{ action }}</button>
+    </form>
+    <a href="/assets" class="back-link">Back to List</a>
+</div>
+</body>
+</html>

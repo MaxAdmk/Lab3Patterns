@@ -192,3 +192,11 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Кешовані байт-коди Python
+__pycache__/
+*.py[cod]
+
+# Системні файли macOS
+.DS_Store
+
